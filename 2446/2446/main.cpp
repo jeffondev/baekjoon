@@ -31,10 +31,6 @@ int main(int argc, const char * argv[]) {
         {
             cout<<"*";
         }
-        for(int j=0; j<space; j++)
-        {
-            cout<<" ";
-        }
         cout<<endl;
     }
     return 0;
