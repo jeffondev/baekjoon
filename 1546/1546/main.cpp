@@ -9,7 +9,8 @@
 using namespace std;
 int main(int argc, const char * argv[]) {
     
-    int n,max=0;;
+    int n,max=0;
+    double sum=0;
     cin>>n;
     int a[n];
     for(int i=0; i<n; i++)
@@ -20,6 +21,10 @@ int main(int argc, const char * argv[]) {
             max=a[i];
         }
     }
-    
+    for(int i=0; i<n; i++)
+    {
+        sum += (double)a[i]*100/(double)max;
+    }
+    cout<<sum/n;
     return 0;
 }
