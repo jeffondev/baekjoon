@@ -7,26 +7,35 @@
 
 #include <iostream>
 using namespace std;
+
+int calc(int number)
+{
+    int sum = number;
+    
+    while (number != 0) {
+        sum = sum + number%10;
+        number = number / 10;
+    }
+    return sum;
+}
+
 int main(int argc, const char * argv[]) {
     
-    int n,weight[50]={0,},height[50]={0,};
-    cin>>n;
-    for(int i=0; i<n; i++)
+    bool check[10001] = {false, };
+    for(int i=1; i<10001; i++)
     {
-        cin>>weight[i]>>height[i];
-    }
-    for(int i=0; i<n; i++)
-    {
-        int k=0;
-        for(int j=0; j<n; j++)
+        int n = calc(i);
+        if(n <10001)
         {
-            if((weight[i] < weight[j]) && (height[i] < height[j]))
-            {
-                k++;
-            }
+            check[n] = true;
         }
-        cout<<k+1<<" ";
     }
-    
+    for(int i=1; i<10001; i++)
+    {
+        if(!check[i])
+        {
+            cout<<i<<endl;
+        }
+    }
     return 0;
 }
